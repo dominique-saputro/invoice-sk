@@ -393,3 +393,4 @@ if excel_file:
         preview_pdf(final_pdf)
 
         st.download_button("Download combined PDF", data=final_pdf, file_name="invoices_combined.pdf", mime="application/pdf")
+        st.frame("invoices_combined.pdf")
