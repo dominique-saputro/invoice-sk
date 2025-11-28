@@ -12,8 +12,6 @@ from reportlab.lib.units import mm
 from reportlab.lib.utils import ImageReader
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
 from typing import List, Dict
-import streamlit.components.v1 as components
-import tempfile
 
 # ---------------------------
 # Config: use provided logo path (will be transformed by environment)
@@ -285,16 +283,6 @@ def build_combined_invoices_pdf(invoices: List[Dict], logo_path: str = None) -> 
     doc.build(story)
     buffer.seek(0)
     return buffer.getvalue()
-
-# ---------------------------
-# Preview helper
-# ---------------------------
-def preview_pdf(pdf_bytes: bytes):
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
-        tmp.write(pdf_bytes)
-        temp_url = f"file://{tmp.name}"
-
-    components.iframe(temp_url, height=800, scrolling=True)
 
 # ---------------------------
 # Streamlit app
