@@ -390,7 +390,7 @@ if excel_file:
         final_pdf = build_combined_invoices_pdf(invoices, logo_path=logo_path)
 
         st.subheader("Preview")
-        preview_pdf(final_pdf)
+        # preview_pdf(final_pdf)
+        st.pdf(final_pdf)
 
         st.download_button("Download combined PDF", data=final_pdf, file_name="invoices_combined.pdf", mime="application/pdf")
-        st.frame("invoices_combined.pdf")
