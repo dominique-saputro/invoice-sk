@@ -381,4 +381,4 @@ if excel_file:
         # preview_pdf(final_pdf)
         st.pdf(final_pdf)
 
-        st.download_button("Download combined PDF", data=final_pdf, file_name="invoices_combined.pdf", mime="application/pdf")
+        st.download_button("Download PDF", data=final_pdf, file_name="invoices_combined.pdf", mime="application/pdf")
