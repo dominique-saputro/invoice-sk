@@ -9,10 +9,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 from reportlab.lib.units import mm
-from reportlab.lib.utils import ImageReader
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
-import base64
-import math
 from typing import List, Dict
 
 # ---------------------------
@@ -380,7 +377,6 @@ if excel_file:
         final_pdf = build_combined_invoices_pdf(invoices, logo_path=logo_path)
 
         st.subheader("Preview")
-        # preview_pdf(final_pdf)
         st.pdf(final_pdf)
 
         st.download_button("Download PDF", data=final_pdf, file_name="invoices_combined.pdf", mime="application/pdf")
