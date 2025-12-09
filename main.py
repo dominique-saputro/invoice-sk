@@ -11,6 +11,7 @@ from reportlab.lib import colors
 from reportlab.lib.units import mm
 from reportlab.lib.utils import ImageReader
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
+import base64
 from typing import List, Dict
 
 # ---------------------------
